@@ -8,7 +8,7 @@ class ListExamples {
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
   // the same order they appeared in the input list;
-  static List<String> filter(ArrayList<String> list, StringChecker sc) {
+  static List<String> filter(List<String> list, StringChecker sc) {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
@@ -28,6 +28,12 @@ class ListExamples {
       if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
         result.add(list1.get(index1));
         index1 += 1;
+      }
+      else if (list1.get(index1).compareTo(list2.get(index2)) == 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+        result.add(list1.get(index1));
+        index2 += 1;
       }
       else {
         result.add(list2.get(index2));
